@@ -18,7 +18,7 @@ class SplashPage extends StatelessWidget {
 
               Center(
                 child: ElevatedButton(onPressed: (){
-                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StartPoint(),));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => StartPoint(),));
                 }, child: Text("Enjoy")),
               ),
               SizedBox(height: 50,),

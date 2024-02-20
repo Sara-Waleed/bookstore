@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'contests/contests.dart';
 import 'features/Presentation/Views/screens/Splach.dart';
 
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData().copyWith(scaffoldBackgroundColor: KPrimaryColor),
-      debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+     // themeMode: ThemeMode.dark,
+        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: KPrimaryColor,
+          textTheme:GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+        ),
+        debugShowCheckedModeBanner: false,
+        home: SplashPage(),
     );
   }
 }
