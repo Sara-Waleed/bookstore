@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/SearchPage.dart';
+
 class Cutom_App_Bar_HomePage extends StatelessWidget {
   const Cutom_App_Bar_HomePage({
     super.key,
@@ -13,7 +15,9 @@ class Cutom_App_Bar_HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset("assets/Logo.png",height: 16,),
-          IconButton(onPressed: (){},
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
+          },
               icon: Icon(Icons.search)),
 
         ],),

@@ -1,52 +1,46 @@
 import 'package:bookstore/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../../../core/shared_Widgets/custom_button.dart';
-import '../Shared_Widgets/BestSeller_Rate.dart';
 import '../Shared_Widgets/BookDetailsAppBar.dart';
-import '../Shared_Widgets/Custom_List_view_item.dart';
+import '../Shared_Widgets/BoxDetailsSection.dart';
+import '../Shared_Widgets/Simialar_List_View.dart';
 
 class BookDetailsView extends StatelessWidget {
   const BookDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var width=  MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        body: Column(
-         crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-           BookDetailsAppBar(),
-            Padding(
-              padding:  EdgeInsets.symmetric(horizontal:width*.2),
-              child: AspectRaio_Image_Widget(),
-            ),
-            SizedBox(height: 43,),
-            Text("The girl Anime",style: Styles.textStyle30),
-            SizedBox(height: 6,),
-            Text("Anime girl",style: Styles.textStyle18.copyWith(
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.w500,
-            ),),
-            Center(child: BestSeller_Rate(rating: 4.9,count: 1500,)),
-       SizedBox(height: 10,),
-       Center(
-         child: Row(
-           children: [
-             CustomButton(),
-             CustomButton(),
-           ],
-         ),
-       ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  BookDetailsAppBar(),
+                  BoxDetailsSection(),
+                  Expanded(child: SizedBox(height: 50,)),
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0),
+                        child: Text("You can also like ",style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),),
+                      )),
+                  SizedBox(height: 15,),
+                  Simialar_List_View(),
+                ],
+              ),),
+            ],
+
+          ),
         ),
 
       ),
     );
   }
 }
-
 
 

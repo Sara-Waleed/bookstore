@@ -17,7 +17,9 @@ import '../../../../core/utils/styles.dart';
   @override
   Widget build(BuildContext context) {
   return Row(
-  mainAxisAlignment: mainAxisAlignment,
+    crossAxisAlignment: CrossAxisAlignment.center,
+
+  mainAxisAlignment: MainAxisAlignment.center,
   children: [
   const Icon(
     Icons.star,
