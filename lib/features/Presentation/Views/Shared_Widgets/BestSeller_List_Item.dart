@@ -61,7 +61,7 @@ class BestSeller_List_Item extends StatelessWidget {
                             fontFamily: kGtSectraFine,
                             fontWeight: FontWeight.bold
                         ),),
-                        BestSeller_Rate(),
+                        BestSeller_Rate(rating: 4.9,count: 2390),
                       ],
                     ),
                   ],
