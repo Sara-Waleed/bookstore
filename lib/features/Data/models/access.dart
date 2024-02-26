@@ -1,9 +1,8 @@
 
-
-
-
 import 'package:bookstore/features/Data/models/epuh.dart';
 import 'package:bookstore/features/Data/models/pdf.dart';
+import 'package:equatable/equatable.dart';
+
 
 class AccessInfo extends Equatable {
   final String? country;

@@ -1,4 +1,6 @@
 
+import 'package:equatable/equatable.dart';
+
 class Pdf extends Equatable {
   final bool? isAvailable;
   final String? acsTokenLink;

@@ -3,6 +3,7 @@ import 'package:bookstore/features/Data/models/access.dart';
 import 'package:bookstore/features/Data/models/sale_info.dart';
 import 'package:bookstore/features/Data/models/search_info.dart';
 import 'package:bookstore/features/Data/models/volume_info.dart';
+import 'package:equatable/equatable.dart';
 
 
 class BookModel extends Equatable {

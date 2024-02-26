@@ -1,4 +1,6 @@
 
+import 'package:equatable/equatable.dart';
+
 import 'image_link.dart';
 import 'industry_identifier.dart';
 import 'panelization_summary.dart';

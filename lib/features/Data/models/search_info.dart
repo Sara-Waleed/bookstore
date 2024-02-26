@@ -1,5 +1,7 @@
 
 
+import 'package:equatable/equatable.dart';
+
 class SearchInfo extends Equatable {
   final String? textSnippet;
 

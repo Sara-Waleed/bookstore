@@ -1,5 +1,7 @@
 
 
+import 'package:equatable/equatable.dart';
+
 class SaleInfo extends Equatable {
   final String? country;
   final String? saleability;
