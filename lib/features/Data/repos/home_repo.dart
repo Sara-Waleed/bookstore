@@ -48,6 +48,9 @@ class ServerFailure extends Failure{
       break;
       case DioExceptionType.badCertificate:
         // TODO: Handle this case.
+        default:
+          return ServerFailure("ooPs There was an error , please try again ");
+
     }
   }
 }
