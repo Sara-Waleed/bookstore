@@ -14,7 +14,7 @@ class BoxDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding:  EdgeInsets.symmetric(horizontal:width*.2),
-          child: AspectRaio_Image_Widget(),
+          child: AspectRaio_Image_Widget(NetImage: ""),
         ),
         SizedBox(height: 43,),
         Text("The girl Anime",style: Styles.textStyle30),

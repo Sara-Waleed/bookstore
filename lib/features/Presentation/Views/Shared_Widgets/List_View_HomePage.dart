@@ -1,4 +1,7 @@
+import 'package:bookstore/core/utils/styles.dart';
+import 'package:bookstore/features/Data/cubits/featured_books_cubit/featured_books_states_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'Custom_List_view_item.dart';
 
@@ -9,16 +12,45 @@ class List_View_HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height*.3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder:(context, index) => Padding(
-          padding: const EdgeInsets.only(right: 5.0),
-          child: Custom_List_view_item(),
-        ),
-        itemCount: 10,
-      ),
+    return BlocBuilder<FeaturedBooksStatesCubit,FeaturedBooksStatesState>(
+  builder: (context, state){
+    if(state is FeaturedBooksStatesSuccess){
+       return SizedBox(
+         height: MediaQuery.of(context).size.height*.3,
+         child: ListView.builder(
+           scrollDirection: Axis.horizontal,
+           itemBuilder:(context, index) => Padding(
+             padding: const EdgeInsets.only(right: 5.0),
+             child: Custom_List_view_item(NetImage: state.books[index].volumeInfo.imageLinks!.thumbnail),
+           ),
+           itemCount: state.books.length,
+         ),
+       );
+    }
+    else if (state is FeaturedBooksStatesFailure){
+      return CustomErrorMessage(textMessage: state.ErroMess,);
+    }
+else{
+  return Center(child: CircularProgressIndicator());
+    }
+  },
+
+    );
+  }
+}
+
+class CustomErrorMessage extends StatelessWidget {
+  final textMessage;
+  const CustomErrorMessage({
+    super.key,
+    required  this.textMessage,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "$textMessage",
+      style: Styles.textStyle18,
     );
   }
 }
