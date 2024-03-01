@@ -1,7 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookstore/features/Data/repos/home_repo.dart';
-import 'package:bookstore/features/Presentation/Views/screens/HomePage.dart';
-import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 
 import '../../models/bookmodel.dart';

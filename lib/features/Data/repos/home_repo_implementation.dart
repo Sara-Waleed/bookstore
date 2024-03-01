@@ -6,8 +6,9 @@ import '../../../core/utils/Api_Services.dart';
 import 'home_repo.dart';
 
 class home_repo_imp implements HomeRepo{
-  late final Api apiService;
+   final Api apiService;
 
+   home_repo_imp({required this.apiService});
   @override
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks()async {
        try{

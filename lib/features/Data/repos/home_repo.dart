@@ -45,7 +45,7 @@ class ServerFailure extends Failure{
       } else {
         return ServerFailure('Received invalid status code: ${dioError.response?.statusCode}');
       }
-      break;
+
       case DioExceptionType.badCertificate:
         // TODO: Handle this case.
         default:
