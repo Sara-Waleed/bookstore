@@ -1,7 +1,5 @@
 import 'package:bookstore/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-
-import '../Shared_Widgets/BestSeller_List_Item.dart';
 import '../Shared_Widgets/CustomSearchTextField.dart';
 
 class SearchPage extends StatelessWidget {
@@ -24,7 +22,8 @@ class SearchPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 8.0,right: 8),
                 child: ListView.builder(
                   shrinkWrap: true,// with sliverToAdapter not With SliverFillRemaining
-                  itemBuilder: (context, index) => BestSeller_List_Item(),
+                  itemBuilder: (context, index) => Text(""),
+                      //BestSeller_List_Item(bookmodel: ),
                   itemCount: 10,
                 ),
               ),

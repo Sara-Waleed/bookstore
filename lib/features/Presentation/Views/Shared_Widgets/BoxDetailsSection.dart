@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/shared_Widgets/custom_button.dart';
 import '../../../../core/utils/styles.dart';
 import 'BestSeller_Rate.dart';
 import 'Custom_List_view_item.dart';
+
+
+
 class BoxDetailsSection extends StatelessWidget {
-  const BoxDetailsSection({Key? key}) : super(key: key);
+   BoxDetailsSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,10 @@ class BoxDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding:  EdgeInsets.symmetric(horizontal:width*.2),
-          child: AspectRaio_Image_Widget(NetImage: ""),
+          child:Custom_List_view_item(
+          imageUrl:'',
+          ),
+
         ),
         SizedBox(height: 43,),
         Text("The girl Anime",style: Styles.textStyle30),

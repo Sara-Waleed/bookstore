@@ -16,7 +16,7 @@ class Simialar_List_View extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder:(context, index) => Padding(
           padding: const EdgeInsets.only(right: 5.0),
-          child: Custom_List_view_item(NetImage: ""),
+          child: Custom_List_view_item(imageUrl:""),
         ),
         itemCount: 10,
       ),

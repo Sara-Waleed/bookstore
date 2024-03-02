@@ -5,7 +5,7 @@ import '../Shared_Widgets/BoxDetailsSection.dart';
 import '../Shared_Widgets/Simialar_List_View.dart';
 
 class BookDetailsView extends StatelessWidget {
-  const BookDetailsView({Key? key}) : super(key: key);
+   BookDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class BookDetailsView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   BookDetailsAppBar(),
-                  BoxDetailsSection(),
+                  BoxDetailsSection( ),
                   Expanded(child: SizedBox(height: 50,)),
                   Align(
                       alignment: Alignment.centerLeft,

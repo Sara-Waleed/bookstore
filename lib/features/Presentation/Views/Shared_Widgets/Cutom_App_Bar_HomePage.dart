@@ -10,11 +10,11 @@ class Cutom_App_Bar_HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 10,left: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset("assets/Logo.png",height: 16,),
+          Image.asset("assets/Logo.png",height: 20,),
           IconButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage(),));
           },

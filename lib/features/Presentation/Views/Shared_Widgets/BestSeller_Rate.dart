@@ -12,7 +12,7 @@ import '../../../../core/utils/styles.dart';
   });
 
   final MainAxisAlignment mainAxisAlignment;
-  final num rating;
+  final num  rating;
   final int count;
   @override
   Widget build(BuildContext context) {

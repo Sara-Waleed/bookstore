@@ -18,12 +18,17 @@ class List_View_HomePage extends StatelessWidget {
        return SizedBox(
          height: MediaQuery.of(context).size.height*.3,
          child: ListView.builder(
+           physics: BouncingScrollPhysics(),
            scrollDirection: Axis.horizontal,
+           itemCount: state.books.length,
            itemBuilder:(context, index) => Padding(
              padding: const EdgeInsets.only(right: 5.0),
-             child: Custom_List_view_item(NetImage: state.books[index].volumeInfo.imageLinks!.thumbnail),
+             child: Custom_List_view_item(
+               imageUrl:  state.books[index].volumeInfo.imageLinks
+                     ?.thumbnail ??
+                     '',),
            ),
-           itemCount: state.books.length,
+
          ),
        );
     }
@@ -31,7 +36,7 @@ class List_View_HomePage extends StatelessWidget {
       return CustomErrorMessage(textMessage: state.ErroMess,);
     }
 else{
-  return Center(child: CircularProgressIndicator());
+  return const Center(child: CircularProgressIndicator());
     }
   },
 

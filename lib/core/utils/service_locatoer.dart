@@ -6,14 +6,8 @@ import 'package:get_it/get_it.dart';
 final getit =GetIt.instance;
 
 void SetUp(){
+  getit.registerSingleton<Api>(Api(Dio()));
+  getit.registerSingleton<home_repo_imp>(home_repo_imp(
+    getit.get<Api>(),));
 
-  getit.registerSingleton<home_repo_imp>(
-   home_repo_imp(apiService: Api(Dio(),), ),);
-
-
-}
-
-class AuthRepo{
-  final Api service;
-  AuthRepo({required this.service});
 }

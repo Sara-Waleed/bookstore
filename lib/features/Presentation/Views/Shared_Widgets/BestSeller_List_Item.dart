@@ -1,14 +1,19 @@
+import 'package:bookstore/features/Data/models/bookmodel.dart';
 import 'package:bookstore/features/Presentation/Views/screens/BookDetailsView.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../contests/contests.dart';
 import '../../../../core/utils/styles.dart';
 import 'BestSeller_Rate.dart';
+import 'Custom_List_view_item.dart';
 
 class BestSeller_List_Item extends StatelessWidget {
   const BestSeller_List_Item({
     super.key,
+    required this.bookmodel,
+
   });
+ final BookModel bookmodel;
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +28,9 @@ class BestSeller_List_Item extends StatelessWidget {
           height: 120,
           child: Row(
             children: [
-              AspectRatio(
-                aspectRatio: 2.5/4,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.red,
-                    image: DecorationImage(
-                        fit:BoxFit.fill,
-                        image: AssetImage("assets/Wt5pDPR1.jpeg")),
-                  ),
-
-                  height:MediaQuery.of(context).size.height * .25 ,
-
-
-                ),
-              ),
+              Custom_List_view_item(imageUrl:bookmodel.volumeInfo.imageLinks
+                  ?.thumbnail ??
+                  'https://i.pinimg.com/564x/42/11/6e/42116efc40c443b1c81d65de095e7b4e.jpg',),
               SizedBox(width: 20,),
               Expanded(
                 child: Column(
@@ -50,18 +42,18 @@ class BestSeller_List_Item extends StatelessWidget {
                           maxLines:2,
                           overflow: TextOverflow.ellipsis,
 
-                          "Hery PotterHery Potter Hery PotterHery Potter Hery Potter ",style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine,),)),
+                          "${bookmodel.volumeInfo.title}",style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine,),)),
                     SizedBox(height: 3,),
-                    Text("J.K Rowling",style: Styles.textStyle14,),
+                    Text("${bookmodel.volumeInfo.authors![0]}",style: Styles.textStyle14,),
                     SizedBox(height: 3,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("19.99\$",style: Styles.textStyle20.copyWith(
+                        Text("free\$",style: Styles.textStyle20.copyWith(
                             fontFamily: kGtSectraFine,
                             fontWeight: FontWeight.bold
                         ),),
-                        BestSeller_Rate(rating: 4.9,count: 2390),
+                        BestSeller_Rate(rating:bookmodel.volumeInfo.averageRating?? 0,count:bookmodel.volumeInfo.ratingsCount?? 0),
                       ],
                     ),
                   ],

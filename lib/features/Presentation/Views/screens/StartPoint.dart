@@ -28,6 +28,7 @@ class _StartPointState extends State<StartPoint> {
     return Scaffold(
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         selectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(
