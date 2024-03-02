@@ -1,56 +1,47 @@
 import 'package:bookstore/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key}) : super(key: key);
 
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    super.key,
+    required this.backgroundColor,
+    required this.textColor,
+    this.borderRadius,
+    required this.text,
+    this.fontSize,
+    this.onPressed,
+  });
+  final String text;
+  final Color backgroundColor;
+  final Color textColor;
+  final BorderRadius? borderRadius;
+  final double? fontSize;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-
-      height: 50,
-      width: MediaQuery.of(context).size.width*.8,
-      child: Row(
-        children: [
-          Expanded(
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.white,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
-                    topLeft:Radius.circular(10) ,
-                  bottomLeft: Radius.circular(10),
-
-                    )),
-
-              ),
-                onPressed: (){},
-                child: Text("19.99\$",style: Styles.textStyle14.copyWith(color: Colors.black),)),
+      height: 48,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: borderRadius ??
+                BorderRadius.circular(
+                  12,
+                ),
           ),
-         Custom_HalfButton(),
-        ],
+        ),
+        child: Text(
+          text,
+          style: Styles.textStyle18.copyWith(
+            color: textColor,
+            fontWeight: FontWeight.w900,
+            fontSize: fontSize,
+          ),
+        ),
       ),
     );
-  }
-}
-
-class Custom_HalfButton extends StatelessWidget {
-  const Custom_HalfButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(child:     TextButton(
-        style: TextButton.styleFrom(
-          backgroundColor: Color(0xffEF8262),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
-            topRight:Radius.circular(10) ,
-            bottomRight: Radius.circular(10),
-
-          )),
-
-        ),
-        onPressed: (){},
-        child: Text(" Free Preview",style: Styles.textStyle14.copyWith(color: Colors.black),)),);
   }
 }

@@ -19,7 +19,9 @@ class BestSeller_List_Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetailsView(),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetailsView(
+          bookmodel: bookmodel,
+        ),));
 
       },
       child: Padding(
@@ -53,7 +55,7 @@ class BestSeller_List_Item extends StatelessWidget {
                             fontFamily: kGtSectraFine,
                             fontWeight: FontWeight.bold
                         ),),
-                        BestSeller_Rate(rating:bookmodel.volumeInfo.averageRating?? 0,count:bookmodel.volumeInfo.ratingsCount?? 0),
+                        BookRating(rating:bookmodel.volumeInfo.averageRating?? 0,count:bookmodel.volumeInfo.ratingsCount?? 0),
                       ],
                     ),
                   ],
