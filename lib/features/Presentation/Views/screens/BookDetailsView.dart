@@ -1,7 +1,7 @@
 import 'package:bookstore/core/utils/service_locatoer.dart';
 import 'package:bookstore/core/utils/styles.dart';
 import 'package:bookstore/features/Data/models/bookmodel.dart';
-import 'package:bookstore/features/Data/repos/home_repo.dart';
+import 'package:bookstore/core/Domain/Repos/home_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../Data/cubits/fetchSimilarBooks/fetch_similar_books_cubit.dart';

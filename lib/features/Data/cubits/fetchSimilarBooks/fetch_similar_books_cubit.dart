@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 import '../../models/bookmodel.dart';
-import '../../repos/home_repo.dart';
+import '../../../../core/Domain/Repos/home_repo.dart';
 part 'fetch_similar_books_state.dart';
 
 

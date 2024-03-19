@@ -2,7 +2,7 @@ import 'package:bookstore/features/Data/models/bookmodel.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import '../../../core/utils/Api_Services.dart';
-import 'home_repo.dart';
+import '../../../core/Domain/Repos/home_repo.dart';
 
 
 class home_repo_imp implements HomeRepo {

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-import '../models/bookmodel.dart';
+import '../../../features/Data/models/bookmodel.dart';
 
 abstract class HomeRepo{
 Future <Either<Failure,List<BookModel>>>fetchBestSellerBooks();
